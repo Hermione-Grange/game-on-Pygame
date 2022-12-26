@@ -3,6 +3,7 @@ import math
 import sys
 import random
 from time import sleep
+from typing import Union
 
 
 from data.font.font import *
@@ -19,7 +20,7 @@ def to_rad(x):
     return rads
 
 
-def load_image(file_name: str, *, ext: str='png', color_key: tuple | bool=True, scale: tuple=()) -> pygame.Surface:
+def load_image(file_name: str, *, ext: str='png', color_key: Union[tuple, bool]=True, scale: tuple=()) -> pygame.Surface:
     image = pygame.image.load(f'{file_name}.{ext}').convert()
     if color_key:
         image.set_colorkey((255, 255, 255))
