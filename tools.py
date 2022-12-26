@@ -7,14 +7,17 @@ from time import sleep
 
 from data.font.font import *
 
+
 # trigonometry functions
-def  to_deg(x):
-    degs = (x * 180) / pi
+def to_deg(x):
+    degs = (x * 180) / math.pi
     return degs
 
+
 def to_rad(x):
-    rads = (x * pi) / 180
+    rads = (x * math.pi) / 180
     return rads
+
 
 def load_image(file_name: str, *, ext: str='png', color_key: tuple | bool=True, scale: tuple=()) -> pygame.Surface:
     image = pygame.image.load(f'{file_name}.{ext}').convert()
